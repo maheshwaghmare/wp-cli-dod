@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: WP CLI DOD
+ * Dod
  *
- * 1. Run `wp dod info`		Info.
+ * 1. Run `wp dod check`		Info.
  *
  * @since 1.0.0
  *
@@ -27,7 +27,8 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 						foreach ($functions as $uses_function_key => $uses_function) {
 							if( ! in_array($uses_function['name'], $all_used_functions) ) {
 								// WP_CLI::line( $uses_function['name'] );
-								$all_used_functions[] = $uses_function['name'];
+								$all_used_functions[] = $uses_function['name'];								
+
 							}
 							// if( 'bsf_extension_nag' == $uses_function['name'] ) {
 							// 	WP_CLI::error($uses_function['name']);
@@ -83,7 +84,9 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 		 * @param  array $assoc_args Associated Arguments.
 		 * @return void
 		 */
-		public function info( $args, $assoc_args ) {			
+		public function check( $args, $assoc_args ) {
+
+			WP_CLI::runcommand( 'parser export . all-details.json' );
 			
 			$files = file_get_contents( ASTRA_PORTFOLIO_DIR . 'all-details.json' );
 
@@ -192,11 +195,8 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 					$unused_functions[] = $function;
 				}
 			}
-			WP_CLI::line( "\n/** Unused Functions: \n---------------------------*/" );
-			WP_CLI::line( print_r( $unused_functions ) );
-
-
-
+			WP_CLI::line( "Unused Functions: (".count( $unused_functions ).")" );
+			// WP_CLI::line( print_r( $unused_functions ) );
 
 			$unused_classes = array();
 			$unused_methods = array();
@@ -222,11 +222,11 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 				// 	$unused_methods[] = $method;
 				// }
 			}
-			WP_CLI::line( "\n/** Unused Classes: \n---------------------------*/" );
-			WP_CLI::line( print_r( $unused_classes ) );
+			WP_CLI::line( "Unused Classes: (".count( $unused_classes ).")" );
+			// WP_CLI::line( print_r( $unused_classes ) );
 
-			WP_CLI::line( "\n/** Unused Class Methods: \n---------------------------*/" );
-			WP_CLI::line( print_r( $unused_methods ) );
+			WP_CLI::line( "Unused Class Methods: (".count( $unused_methods ).")" );
+			// WP_CLI::line( print_r( $unused_methods ) );
 
 			// get_site
 			// C:\xampp\htdocs\dev.fresh\wp-content\plugins\astra-portfolio\
