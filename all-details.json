@@ -1,0 +1,401 @@
+[
+    {
+        "file": {
+            "description": "Plugin Name: WP CLI DOD",
+            "long_description": "<ol> <li>Run <code>wp dod check<\/code>       Info.<\/li> <\/ol>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "1.0.0"
+                },
+                {
+                    "name": "package",
+                    "content": "Dod"
+                }
+            ]
+        },
+        "path": "wp-cli-dod.php",
+        "root": "C:\\xampp\\htdocs\\dev.fresh\\wp-content\\plugins\\wp-cli-dod",
+        "uses": {
+            "methods": [
+                {
+                    "name": "add_command",
+                    "class": "\\WP_CLI",
+                    "static": true,
+                    "line": 240,
+                    "end_line": 240
+                }
+            ],
+            "functions": [
+                {
+                    "name": "class_exists",
+                    "line": 12,
+                    "end_line": 12
+                },
+                {
+                    "name": "class_exists",
+                    "line": 12,
+                    "end_line": 12
+                }
+            ]
+        },
+        "classes": [
+            {
+                "name": "DOD",
+                "namespace": "global",
+                "line": 17,
+                "end_line": 235,
+                "final": false,
+                "abstract": false,
+                "extends": "\\WP_CLI_Command",
+                "implements": [],
+                "properties": [],
+                "methods": [
+                    {
+                        "name": "get_used_functions",
+                        "namespace": "",
+                        "aliases": [],
+                        "line": 19,
+                        "end_line": 44,
+                        "final": false,
+                        "abstract": false,
+                        "static": false,
+                        "visibility": "public",
+                        "arguments": [
+                            {
+                                "name": "$uses",
+                                "default": "array()",
+                                "type": ""
+                            },
+                            {
+                                "name": "$all_used_functions",
+                                "default": null,
+                                "type": ""
+                            }
+                        ],
+                        "doc": {
+                            "description": "",
+                            "long_description": "",
+                            "tags": []
+                        },
+                        "uses": {
+                            "functions": [
+                                {
+                                    "name": "in_array",
+                                    "line": 28,
+                                    "end_line": 28
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "get_used_methods",
+                        "namespace": "",
+                        "aliases": [],
+                        "line": 46,
+                        "end_line": 78,
+                        "final": false,
+                        "abstract": false,
+                        "static": false,
+                        "visibility": "public",
+                        "arguments": [
+                            {
+                                "name": "$uses",
+                                "default": "array()",
+                                "type": ""
+                            },
+                            {
+                                "name": "$all_used_methods",
+                                "default": null,
+                                "type": ""
+                            }
+                        ],
+                        "doc": {
+                            "description": "",
+                            "long_description": "",
+                            "tags": []
+                        },
+                        "uses": {
+                            "functions": [
+                                {
+                                    "name": "str_replace",
+                                    "line": 57,
+                                    "end_line": 57
+                                },
+                                {
+                                    "name": "in_array",
+                                    "line": 60,
+                                    "end_line": 60
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "check",
+                        "namespace": "",
+                        "aliases": [],
+                        "line": 87,
+                        "end_line": 234,
+                        "final": false,
+                        "abstract": false,
+                        "static": false,
+                        "visibility": "public",
+                        "arguments": [
+                            {
+                                "name": "$args",
+                                "default": null,
+                                "type": ""
+                            },
+                            {
+                                "name": "$assoc_args",
+                                "default": null,
+                                "type": ""
+                            }
+                        ],
+                        "doc": {
+                            "description": "Info",
+                            "long_description": "",
+                            "tags": [
+                                {
+                                    "name": "param",
+                                    "content": "Arguments.",
+                                    "types": [
+                                        "array"
+                                    ],
+                                    "variable": "$args"
+                                },
+                                {
+                                    "name": "param",
+                                    "content": "Associated Arguments.",
+                                    "types": [
+                                        "array"
+                                    ],
+                                    "variable": "$assoc_args"
+                                },
+                                {
+                                    "name": "return",
+                                    "content": "",
+                                    "types": [
+                                        "void"
+                                    ]
+                                }
+                            ]
+                        },
+                        "uses": {
+                            "methods": [
+                                {
+                                    "name": "runcommand",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 89,
+                                    "end_line": 89
+                                },
+                                {
+                                    "name": "get_used_functions",
+                                    "class": "\\DOD",
+                                    "static": false,
+                                    "line": 120,
+                                    "end_line": 120
+                                },
+                                {
+                                    "name": "get_used_methods",
+                                    "class": "\\DOD",
+                                    "static": false,
+                                    "line": 121,
+                                    "end_line": 121
+                                },
+                                {
+                                    "name": "get_used_functions",
+                                    "class": "\\DOD",
+                                    "static": false,
+                                    "line": 149,
+                                    "end_line": 149
+                                },
+                                {
+                                    "name": "get_used_methods",
+                                    "class": "\\DOD",
+                                    "static": false,
+                                    "line": 150,
+                                    "end_line": 150
+                                },
+                                {
+                                    "name": "get_used_functions",
+                                    "class": "\\DOD",
+                                    "static": false,
+                                    "line": 167,
+                                    "end_line": 167
+                                },
+                                {
+                                    "name": "get_used_methods",
+                                    "class": "\\DOD",
+                                    "static": false,
+                                    "line": 168,
+                                    "end_line": 168
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 179,
+                                    "end_line": 179
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 180,
+                                    "end_line": 180
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 182,
+                                    "end_line": 182
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 183,
+                                    "end_line": 183
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 185,
+                                    "end_line": 185
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 186,
+                                    "end_line": 186
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 188,
+                                    "end_line": 188
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 189,
+                                    "end_line": 189
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 198,
+                                    "end_line": 198
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 225,
+                                    "end_line": 225
+                                },
+                                {
+                                    "name": "line",
+                                    "class": "\\WP_CLI",
+                                    "static": true,
+                                    "line": 228,
+                                    "end_line": 228
+                                }
+                            ],
+                            "functions": [
+                                {
+                                    "name": "file_get_contents",
+                                    "line": 91,
+                                    "end_line": 91
+                                },
+                                {
+                                    "name": "json_decode",
+                                    "line": 99,
+                                    "end_line": 99
+                                },
+                                {
+                                    "name": "strpos",
+                                    "line": 105,
+                                    "end_line": 105
+                                },
+                                {
+                                    "name": "array_unique",
+                                    "line": 176,
+                                    "end_line": 176
+                                },
+                                {
+                                    "name": "array_unique",
+                                    "line": 177,
+                                    "end_line": 177
+                                },
+                                {
+                                    "name": "print_r",
+                                    "line": 180,
+                                    "end_line": 180
+                                },
+                                {
+                                    "name": "print_r",
+                                    "line": 183,
+                                    "end_line": 183
+                                },
+                                {
+                                    "name": "print_r",
+                                    "line": 186,
+                                    "end_line": 186
+                                },
+                                {
+                                    "name": "print_r",
+                                    "line": 189,
+                                    "end_line": 189
+                                },
+                                {
+                                    "name": "in_array",
+                                    "line": 194,
+                                    "end_line": 194
+                                },
+                                {
+                                    "name": "count",
+                                    "line": 198,
+                                    "end_line": 198
+                                },
+                                {
+                                    "name": "in_array",
+                                    "line": 213,
+                                    "end_line": 213
+                                },
+                                {
+                                    "name": "array_key_exists",
+                                    "line": 206,
+                                    "end_line": 206
+                                },
+                                {
+                                    "name": "count",
+                                    "line": 225,
+                                    "end_line": 225
+                                },
+                                {
+                                    "name": "count",
+                                    "line": 228,
+                                    "end_line": 228
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "doc": {
+                    "description": "Dod",
+                    "long_description": "",
+                    "tags": []
+                }
+            }
+        ]
+    }
+]

@@ -1,6 +1,6 @@
 <?php
 /**
- * Dod
+ * Plugin Name: WP CLI DOD
  *
  * 1. Run `wp dod check`		Info.
  *
