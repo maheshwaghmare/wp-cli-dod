@@ -86,6 +86,10 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 		 */
 		public function check( $args, $assoc_args ) {
 
+			// Show the unused functions or methods.
+			$show_functions = ( isset( $assoc_args['show-functions'] ) ) ? true : false;
+			$show_methods = ( isset( $assoc_args['show-methods'] ) ) ? true : false;
+
 			WP_CLI::runcommand( 'parser export . all-details.json' );
 			
 			$files = file_get_contents( ASTRA_PORTFOLIO_DIR . 'all-details.json' );
@@ -176,17 +180,17 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 			$all_functions      = array_unique($all_functions);
 			$all_used_functions = array_unique($all_used_functions);
 
-			WP_CLI::line( "\n/** ALL_FUNCTIONS\n---------------------------*/" );
-			WP_CLI::line( print_r( $all_functions ) );
+			WP_CLI::line( "ALL_FUNCTIONS: ".count( $all_functions ) );
+			// WP_CLI::line( print_r( $all_functions ) );
 			
-			WP_CLI::line( "\n/** ALL_USED_FUNCTIONS\n---------------------------*/" );
-			WP_CLI::line( print_r( $all_used_functions ) );
+			WP_CLI::line( "ALL_USED_FUNCTIONS: ".count( $all_used_functions ) );
+			// WP_CLI::line( print_r( $all_used_functions ) );
 
-			WP_CLI::line( "\n/** ALL_METHODS\n---------------------------*/" );
-			WP_CLI::line( print_r( $all_methods ) );
+			WP_CLI::line( "ALL_METHODS: ".count( $all_methods ) );
+			// WP_CLI::line( print_r( $all_methods ) );
 
-			WP_CLI::line( "\n/** ALL_USED_METHODS\n---------------------------*/" );
-			WP_CLI::line( print_r( $all_used_methods ) );
+			WP_CLI::line( "ALL_USED_METHODS: ".count( $all_used_methods ) );
+			// WP_CLI::line( print_r( $all_used_methods ) );
 
 
 			$unused_functions = array();
@@ -195,8 +199,11 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 					$unused_functions[] = $function;
 				}
 			}
+			WP_CLI::line( "-----------------------------------" );
 			WP_CLI::line( "Unused Functions: (".count( $unused_functions ).")" );
-			// WP_CLI::line( print_r( $unused_functions ) );
+			if( $show_functions ) {
+				WP_CLI::line( print_r( $unused_functions ) );
+			}
 
 			$unused_classes = array();
 			$unused_methods = array();
@@ -226,7 +233,10 @@ if ( ! class_exists( 'DOD' ) && class_exists( 'WP_CLI_Command' ) ) :
 			// WP_CLI::line( print_r( $unused_classes ) );
 
 			WP_CLI::line( "Unused Class Methods: (".count( $unused_methods ).")" );
-			// WP_CLI::line( print_r( $unused_methods ) );
+			if( $show_methods ) {
+				WP_CLI::line( print_r( $unused_methods ) );
+			}
+
 
 			// get_site
 			// C:\xampp\htdocs\dev.fresh\wp-content\plugins\astra-portfolio\
